@@ -79,6 +79,7 @@ end
 
 
 //output logic 
+
 wire A1_in_C4_Group = C4_index_grouped == A1 || C3__index_grouped == A1 || C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
 wire A1_in_C3_Group = C3__index_grouped == A1 || C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
 wire A1_in_C2_Group = C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
@@ -91,23 +92,23 @@ begin
     if(reset) HC1 <= 8'd0;
     else if(current_state == Split_C4)
     begin
-        if(C4_index_array[0] == A1) M1[0] <= 1'd1;
-        else if(C4_index_array[0] == Group && A1_in_C4_Group) M1[0] <= 1'd1;
+        if(C4_index_array[1] == A1) M1[0] <= 1'd1;
+        else if(C4_index_array[1] == Group && A1_in_C4_Group) M1[0] <= 1'd1;
     end
     else if(current_state == Split_C3)
     begin
-        if(C3_index_array[0] == A1) M1[1] <= 1'd1;
-        else if(C3_index_array[0] == Group && A1_in_C3_Group) M1[1] <= 1'd1;
+        if(C3_index_array[2] == A1) M1[1] <= 1'd1;
+        else if(C3_index_array[2] == Group && A1_in_C3_Group) M1[1] <= 1'd1;
     end
     else if(current_state == Split_C2)
     begin
-        if(C2_index_array[0] == A1) M1[2] <= 1'd1;
-        else if(C2_index_array[0] == Group && A1_in_C2_Group) M1[2] <= 1'd1;
+        if(C2_index_array[3] == A1) M1[2] <= 1'd1;
+        else if(C2_index_array[3] == Group && A1_in_C2_Group) M1[2] <= 1'd1;
     end
     else if(current_state == Split_C1)
     begin
-        if(C1_index_array[0] == A1) M1[3] <= 1'd1;
-        else if(C1_index_array[0] == Group && A1_in_C1_Group) M1[3] <= 1'd1;
+        if(C1_index_array[4] == A1) M1[3] <= 1'd1;
+        else if(C1_index_array[4] == Group && A1_in_C1_Group) M1[3] <= 1'd1;
     end
 end
 
