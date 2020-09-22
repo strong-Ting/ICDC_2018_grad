@@ -1,0 +1,58 @@
+ncverilog: 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Sep 22, 2020 at 09:20:47 CST
+ncverilog
+	tb.v
+	../src/huffman.v
+	+define+tb1
+	+access+r
+Recompiling... reason: file '../src/huffman.v' is newer than expected.
+	expected: Tue Sep 22 09:16:54 2020
+	actual:   Tue Sep 22 09:20:44 2020
+file: tb.v
+`define tb1
+           |
+ncvlog: *W,MACNDF (tb.v,7|11): The text macro 'tb1' has also been defined on the command line using the -DEFINE command line option.  The compiler will ignore the definition found in the Verilog source code.
+file: ../src/huffman.v
+	module worklib.huffman:v
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.huffman:v <0x2061eabb>
+			streams:  34, words: 11428
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:               43      43
+		Scalar wires:            10       -
+		Vectored wires:          25       -
+		Always blocks:            9       9
+		Initial blocks:           7       7
+		Cont. assignments:       10      11
+		Pseudo assignments:       1       1
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.tb:v
+Loading snapshot worklib.tb:v .................... Done
+*Verdi* Loading libsscore_ius152.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+FSDB Dumper for IUS, Release Verdi_Q-2020.03, Linux, 02/09/2020
+(C) 1996 - 2020 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'huffman.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+./pattern1.dat and ./golden1.dat were used for this simulation.
+Check CNT : PASS
+Check HC : ERROR
+Check M : ERROR
+Simulation stop here.
+Simulation complete via $finish(1) at time 1080 NS + 0
+./tb.v:154                  $finish;
+ncsim> exit
+TOOL:	ncverilog	15.20-s039: Exiting on Sep 22, 2020 at 09:20:52 CST  (total: 00:00:05)

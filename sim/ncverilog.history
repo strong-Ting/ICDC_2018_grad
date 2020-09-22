@@ -1,0 +1,12 @@
+s1(22Sep2020:08:56:32):  ncverilog ../src/huffman.v 
+s2(22Sep2020:08:58:57):  ncverilog ../src/huffman.v 
+s3(22Sep2020:08:59:00):  ncverilog ../src/huffman.v 
+s4(22Sep2020:08:59:20):  ncverilog -sv ../src/huffman.v 
+s5(22Sep2020:09:00:29):  ncverilog -sv ../src/huffman.v 
+s6(22Sep2020:09:00:40):  ncverilog ../src/huffman.v 
+s7(22Sep2020:09:12:33):  ncverilog ../src/huffman.v 
+s8(22Sep2020:09:12:57):  ncverilog tb.v ../src/huffman.v +define+tb1 
+s9(22Sep2020:09:15:54):  ncverilog tb.v ../src/huffman.v +define+tb1 
+s10(22Sep2020:09:16:57):  ncverilog tb.v ../src/huffman.v +define+tb1 
+s11(22Sep2020:09:18:03):  ncverilog tb.v ../src/huffman.v +define+tb1 +access+r 
+s12(22Sep2020:09:20:47):  ncverilog tb.v ../src/huffman.v +define+tb1 +access+r 

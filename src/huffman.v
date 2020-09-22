@@ -1,5 +1,6 @@
-module huffman(clk, reset, gray_valid, CNT_valid, CNT1, CNT2, CNT3, CNT4, CNT5, CNT6,
-    code_valid, HC1, HC2, HC3, HC4, HC5, HC6);
+
+module huffman(clk, reset, gray_valid, gray_data, CNT_valid, CNT1, CNT2, CNT3, CNT4, CNT5, CNT6,
+    code_valid,M1, M2, M3, M4, M5, M6, HC1, HC2, HC3, HC4, HC5, HC6);
 
 input clk;
 input reset;
@@ -18,7 +19,7 @@ reg code_valid;
 reg [7:0] HC1, HC2, HC3, HC4, HC5, HC6;
 reg [7:0] M1, M2, M3, M4, M5, M6;
 //state
-reg current_state,next_state;
+reg [3:0] current_state,next_state;
 
 parameter IDLE = 4'd0;
 parameter READ = 4'd1;
@@ -72,16 +73,107 @@ end
 always @(*) 
 begin
     case (current_state)
-        : 
+        IDLE:
+        begin
+            if(gray_valid == 1'd1) next_state = READ;
+            else next_state = IDLE;
+        end 
+        READ:
+        begin
+            if(gray_valid == 1'd1) next_state = READ;
+            else next_state = INIT;
+        end
+        INIT:
+        begin
+            next_state = Done;
+            //if() next_state = C1;
+            //else next_state = INIT;
+        end
+        C1:
+        begin
+            
+        end
+        C2:
+        begin
+            
+        end
+        C3:
+        begin
+            
+        end
+        C4:
+        begin
+            
+        end
+        Split_C4:
+        begin
+            
+        end
+        Split_C3:
+        begin
+            
+        end
+        Split_C2:
+        begin
+            
+        end
+        Split_C1:
+        begin
+            
+        end
+        Done:
+        begin
+            next_state = Done;
+        end
         default: 
+        begin
+            next_state = IDLE;
+        end
     endcase
 end
 
 
 //output logic 
 
-wire A1_in_C4_Group = C4_index_grouped == A1 || C3__index_grouped == A1 || C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
-wire A1_in_C3_Group = C3__index_grouped == A1 || C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
+//CNT
+always@(posedge clk or posedge reset)
+begin
+    if(reset) 
+    begin
+        CNT1 <= 8'd0;
+        CNT2 <= 8'd0;
+        CNT3 <= 8'd0;
+        CNT4 <= 8'd0;
+        CNT5 <= 8'd0;
+        CNT6 <= 8'd0;
+    end
+    else if(next_state == READ)
+    begin
+        if(gray_data == 8'd1) CNT1 <= CNT1 + 8'd1;
+        if(gray_data == 8'd2) CNT2 <= CNT2 + 8'd1;
+        if(gray_data == 8'd3) CNT3 <= CNT3 + 8'd1;
+        if(gray_data == 8'd4) CNT4 <= CNT4 + 8'd1;
+        if(gray_data == 8'd5) CNT5 <= CNT5 + 8'd1;
+        if(gray_data == 8'd6) CNT6 <= CNT6 + 8'd1;
+    end
+end
+//CNT_valid
+always@(posedge clk or posedge reset)
+begin
+    if(reset) CNT_valid <= 1'd0;
+    else if(current_state == INIT) CNT_valid <= 1'd1;
+    else CNT_valid <= 1'd0;
+end
+
+//code_valid
+always@(posedge clk or posedge reset)
+begin
+    if(reset) code_valid <= 1'd0;
+    else if(current_state == Done) code_valid <= 1'd1;    
+end
+
+wire A1_in_C4_Group = C4_index_grouped == A1 || C3_index_grouped == A1 || C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
+wire A1_in_C3_Group = C3_index_grouped == A1 || C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
 wire A1_in_C2_Group = C2_index_grouped == A1 || C1_index_grouped == A1 || init_index_array[5] == A1;
 wire A1_in_C1_Group = C1_index_grouped == A1 || init_index_array[5] == A1;
 wire A1_not_in_Group = !(A1_in_C4_Group);
