@@ -1,4 +1,4 @@
-@nWave rc file Version 1.0
+@verdi rc file Version 1.0
 [Library]
 work = ./work
 [Annotation]

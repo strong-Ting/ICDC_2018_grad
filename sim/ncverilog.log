@@ -1,13 +1,13 @@
 ncverilog: 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Sep 22, 2020 at 09:20:47 CST
+TOOL:	ncverilog	15.20-s039: Started on Sep 22, 2020 at 11:11:46 CST
 ncverilog
 	tb.v
 	../src/huffman.v
 	+define+tb1
 	+access+r
 Recompiling... reason: file '../src/huffman.v' is newer than expected.
-	expected: Tue Sep 22 09:16:54 2020
-	actual:   Tue Sep 22 09:20:44 2020
+	expected: Tue Sep 22 11:05:48 2020
+	actual:   Tue Sep 22 11:11:44 2020
 file: tb.v
 `define tb1
            |
@@ -21,17 +21,17 @@ file: ../src/huffman.v
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.huffman:v <0x2061eabb>
-			streams:  34, words: 11428
+		worklib.huffman:v <0x7d7a2023>
+			streams:  58, words: 21569
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
 		Modules:                  2       2
-		Registers:               43      43
+		Registers:               50      50
 		Scalar wires:            10       -
 		Vectored wires:          25       -
-		Always blocks:            9       9
+		Always blocks:           10      10
 		Initial blocks:           7       7
 		Cont. assignments:       10      11
 		Pseudo assignments:       1       1
@@ -52,7 +52,7 @@ Check CNT : PASS
 Check HC : ERROR
 Check M : ERROR
 Simulation stop here.
-Simulation complete via $finish(1) at time 1080 NS + 0
+Simulation complete via $finish(1) at time 1150 NS + 0
 ./tb.v:154                  $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Sep 22, 2020 at 09:20:52 CST  (total: 00:00:05)
+TOOL:	ncverilog	15.20-s039: Exiting on Sep 22, 2020 at 11:11:52 CST  (total: 00:00:06)

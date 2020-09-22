@@ -1,0 +1,3 @@
+Invoking simulator...
+Verdi>simv -sml=verdi +fsdb+gate=off -ucli2Proc -ucli
+srcDeselectAll -win $_nTrace1

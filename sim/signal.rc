@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_Q-2020.03
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 23 1920 1017 218 65
+viewPort 1920 23 1680 987 218 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 42505.494094
-cursor 5000.000000
+zoom 79914.523474 116150.000000
+cursor 109500.000000
 marker 0.000000
 
 ; user define markers
@@ -49,18 +49,18 @@ addGroup "G1"
 activeDirFile "" "/home/lin/github/CIC_2018_grad/sim/huffman.fsdb"
 addSignal -h 15 /tb/u_huffman/clk
 addSignal -h 15 -holdScope reset
-addSignal -h 15 -holdScope current_state
-addSignal -h 15 -holdScope next_state
-addSignal -h 15 -holdScope gray_data[7:0]
+addSignal -h 15 -holdScope current_state[3:0]
+addSignal -h 15 -holdScope next_state[3:0]
 addSignal -h 15 -holdScope gray_valid
-addSignal -h 15 -holdScope CNT1[7:0]
-addSignal -h 15 -holdScope CNT2[7:0]
-addSignal -h 15 -holdScope CNT3[7:0]
-addSignal -h 15 -holdScope CNT4[7:0]
-addSignal -h 15 -holdScope CNT5[7:0]
-addSignal -h 15 -holdScope CNT6[7:0]
+addSignal -h 15 -holdScope gray_data[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope CNT1[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope CNT2[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope CNT3[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope CNT4[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope CNT5[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope CNT6[7:0]
 addSignal -h 15 -holdScope CNT_valid
-addSignal -h 15 -holdScope code_valid
+addSignal -h 15 -holdScope counter[2:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
@@ -71,6 +71,7 @@ GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
 "/tb"
+"/tb/u_huffman"
 
 SCOPE_LIST_BEGIN
 "/tb"
