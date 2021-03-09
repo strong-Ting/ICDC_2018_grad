@@ -1,4 +1,4 @@
-@nWave rc file Version 1.0
+@verdi rc file Version 1.0
 [Library]
 work = ./work
 [Annotation]
@@ -111,6 +111,8 @@ FSM = 1
 Branch = 1
 [DesignTree]
 IfShowModule = {TRUE, FALSE}
+[DisabledMessages]
+version = Verdi_Q-2020.03
 [Editor]
 editorName = TurboEditor
 [Emacs]
@@ -199,17 +201,17 @@ StickSet-TextColor = black
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/lin/github/CIC_2018_grad/sim/huffman.fsdb\""
+nWaveOpenFsdbDirHistory = "\"/home/SIP/M10912039/github/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/tesssst.fsdb\""
 [Form]
 version = Verdi_Q-2020.03
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
 SyncBrowserDir = TRUE
-version = Verdi_Q-2020.03
 SignalCaseInSensitive = FALSE
 cmd_enter_form = FALSE
 ShowWndCtntDuringResizing = FALSE
+version = Verdi_Q-2020.03
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]
@@ -318,15 +320,46 @@ Wave_getsignal_form_font = -f COURIER12
 cmd1 = "xterm -font 9x15 -fg black -bg gray -e"
 name = "vi"
 options = "+${CurLine} ${CurFullFileName}"
+[Power]
+PowerDownInstance = ID_GRAY1
+RetentionSignal = ID_YELLOW2
+IsolationSignal = ID_RED6
+LevelShiftedSignal = ID_GREEN6
+PowerSwitchObject = ID_ORANGE5
+AlwaysOnObject = ID_GREEN5
+PowerNet = ID_RED2
+GroundNet = ID_RED2
+SimulationOnly = ID_CYAN3
+SRSN/SPA = ID_CYAN3
+CNSSignal = ID_CYAN3
+RPTRSignal = ID_CYAN3
+AcknowledgeSignal = ID_CYAN3
+BoundaryPort = ID_CYAN3
+DisplayInstrumentedCell = TRUE
+ShowCmdByFile = FALSE
+ShowPstAnnot = FALSE
+ShowIsoSymbol = TRUE
+ExtractIsoSameNets = FALSE
+AnnotateSignal = TRUE
+HighlightPowerObject = TRUE
+HighlightPowerDomain = TRUE
+TraceThroughInstruLowPower = TRUE
+BrightenPowerColorInSchematicWindow = FALSE
+ShowAlias = FALSE
+ShowVoltage = TRUE
+MatchTreeNodesCaseInsensitive = FALSE
+SearchHBNodeDynamically = FALSE
+ContinueTracingSupplyOrLogicNet = FALSE
 [Print]
 PrinterName = lp
 FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
-openFileDlg = 665,561,602,483
-saveSigDlg = 684,338,551,386
-qWaveSignalDialog = 560,292,800,479
+openFileDlg = 1907,192,602,483
+schExtrFSM = 2064,381,287,105
+QwWarnMsgDlg = 1898,257,600,250
+qWaveSignalDialog = 1844,199,800,479
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -365,6 +398,41 @@ simType = {vcssv, xl, nc, vcs, mti, mti_vlog, vhnc, scs, mixnc}
 thirdpartyIdx = -1
 iscCmdSep = FALSE
 NoAppendOption = False
+[SimulationPlus]
+xlPath = verilog
+xlOption = 
+ncPath = ncsim
+ncOption = -f ncsim.args
+vcsPath = simv
+vcsOption = 
+mti_vlogPath = vsim
+mti_vlogOption = novas_vlog
+mtiPath = vsim
+mtiOption = 
+vhncPath = ncsim
+vhncOption = -log debussy.nc.log
+speedsimPath = verilog
+speedsimOption = 
+mixncPath = ncsim
+mixncOption = -log debussy.mixnc.log
+scsPath = scsim
+scsOption = 
+vcs_mixPath = simv
+vcs_mixOption = -vhdlrun "-vhpi debussy:FSDBDumpCmd"
+scs_mixPath = scsim
+scs_mixOption = -vhpi debussy:FSDBDumpCmd
+vcs_svPath = simv
+vcs_svOption = 
+simType = vcssv
+thirdpartyIdx = -1
+interactiveDebugging = FALSE
+KeepBreakPoints = FALSE
+iscCmdSep = FALSE
+ScsDebugAll = FALSE
+NoAppendOption = FALSE
+invokeSimPath = work
+[SimulationPlus2]
+eventDumpUnfinish = FALSE
 [Source]
 wordWrapOn = TRUE
 viewReuse = TRUE
@@ -385,10 +453,15 @@ not_ask_for_source_path = FALSE
 expandMacroOn = TRUE
 expandMacroInstancesThreshold = 10000
 annotateOnStructInstDecl = FALSE
+[SourceVHDL]
+vhSimType = NC-VHDL
+ohSimType = VerilogXL
 [TclShell]
 nLineSize = 1024
 [Test]
 verbose_progress = FALSE
+[TestBenchBrowser]
+-showUVMDynamicHierTreeWin = FALSE
 [Text]
 hdlComment = Gray1
 hdlKeyword = blue4
@@ -521,6 +594,44 @@ Button4 = "Next Event" "$db_step(1);\n"
 Button3 = "Next ? Time" "#${Arg:Next Time} $stop;.\n"
 Button2 = "Next 1000 Time" "#1000 $stop;.\n"
 Button1 = "Dump All Signals" "$fsdbDumpvars;\n"
+[VIA]
+viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc"
+[VIA.oneSearch.preference]
+DefaultDisplayTimeUnit = "1.000000ns"
+DefaultLogTimeUnit = "1.000000ns"
+[VIA.oneSearch.preference.vgifColumnSettingRC]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
+parRuleSets = ""
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
+name = Message
+width = 2000
+visualIndex = 4
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = Time
+width = 60
+visualIndex = 0
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = Code
+width = 60
+visualIndex = 2
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = Type
+width = 60
+visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = Severity
+width = 60
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
 [Vi]
 ViFont = "Clean 14"
 ViBG = white
@@ -537,11 +648,7 @@ SigGroupRuleFile =
 anaAuto100VertFit = FALSE
 DisplayFileName = FALSE
 waveform_vertical_scroll_bar = TRUE
-scope_to_save_with_macro
-open_file_dir
-open_rc_file_dir
-getSignalForm = 560 292 800 479 245 381 505 183
-viewPort = 0 23 1920 1017 218 65
+viewPort = 1536 45 1344 777 100 65
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -737,6 +844,7 @@ ResolveSymbolicLink = TRUE
 signal_rc_abspath = TRUE
 signal_rc_no_natural_bus_range = FALSE
 save_scope_with_macro = FALSE
+scope_to_save_with_macro
 TipInSignalWin = FALSE
 DisplayPackedSiganlInBitwiseManner = FALSE
 DisplaySignalTypeAheadOfSignalName = TRUE ICON
@@ -786,7 +894,7 @@ maskIsolation = TRUE
 maskRetention = TRUE
 maskDrivingPowerOff = TRUE
 maskToggle = TRUE
-autoBackupSignals = off 5 "\"/home/lin/nWaveLog\"" "\"novas_autosave_sig\""
+autoBackupSignals = off 5 "\"/home/SIP/M10912039/github/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/nWaveLog\"" "\"novas_autosave_sig\""
 signal_rc_attribute = 65535
 signal_rc_alias_attribute = 0
 ConvertAttr1 = -inc FALSE
@@ -814,8 +922,10 @@ curveWindow_Drag&Drop_Mode = TRUE
 hspiceIncOpenMode = TRUE
 pcSelectMode = TRUE
 hierarchyDelimiter = /
-RecentFile1 = "\"/home/lin/github/CIC_2018_grad/sim/huffman.fsdb\""
+RecentFile1 = "\"/home/SIP/M10912039/github/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/tesssst.fsdb\""
 open_file_time_range = FALSE
+open_file_dir
+open_rc_file_dir
 value_window_aligment = Right
 signal_window_alignment = Auto
 ShowDeltaTime = TRUE
@@ -826,18 +936,18 @@ group_name_font = -f COURIER12 -c ID_GREEN5
 ruler_value_font = -f COURIER12 -c ID_CYAN5
 analog_ruler_value_font = -f COURIER12 -c ID_CYAN5
 comment_string_font = -f COURIER12 -c ID_RED5
-getsignal_form_font = -f COURIER12 
+getsignal_form_font = -f COURIER12
 SigsCheckNum = on 1000
 filter_synthesized_net = off n
 filterOutNet = on
 exclude_signal_with_prefix = off n
 synthesizeNetOnly = on
-filter_synthesized_instance = off 
+filter_synthesized_instance = off
 filterOutInstance = on
 showGroupTree = TRUE
 hierGroupDelim = /
 MsgSeverityColor = {y \"Severity\"==\"1\" ID_RED5} {y \"Severity\"==\"2\" ID_RED6} {y \"Severity\"==\"3\" ID_RED7} {y \"Severity\"==\"4\" ID_RED8} {y \"Severity\"==\"5\" ID_ORANGE5} {y \"Severity\"==\"6\" ID_ORANGE6} {y \"Severity\"==\"7\" ID_ORANGE7} {y \"Severity\"==\"8\" \
-ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5} 
+ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5}
 AutoApplySeverityColor = TRUE
 AutoAdjustMsgWidthByLabel = off
 verilogStrengthDispType = type1
@@ -854,6 +964,7 @@ displayHorizontalRuler = FALSE
 displayVerticalGrid = FALSE
 displayHorizontalGrid = FALSE
 waveClickMemberNode = FALSE
+getSignalForm = 1844 199 800 479 164 381 390 89
 [cov_hier_name_column]
 justify = TRUE
 [coverageColors]
@@ -924,6 +1035,13 @@ LineBreakWithScope = FALSE
 StopAfterCompileOption = -i
 [fusa]
 tooltip_summary = TRUE
+Name_Show = TRUE
+Coverage_Show = TRUE
+Test_Cov_Show = TRUE
+Fault_Cov_Show = TRUE
+Undetected_Show = TRUE
+Num_of_Fault_Show = TRUE
+Num_of_Inst_Show = TRUE
 [hvpsetting]
 importExcelXMLOptions = 
 use_test_loca_as_source = FALSE
@@ -1104,6 +1222,15 @@ margin_bottom = 0.80
 margin_left = 0.50
 margin_right = 0.50
 margin_unit = inches
+[spiceDebug]
+ThroughNet = ID_YELLOW5
+InstrumentSig = ID_GREEN5
+InterfaceElement = ID_GREEN5
+Run-timeInterfaceElement = ID_BLUE5
+HighlightThroughNet = TRUE
+HighlightInterfaceElement = TRUE
+HighlightRuntimeInterfaceElement = TRUE
+HighlightSameNet = TRUE
 [surefire]
 TPLanguage = Verilog
 TPName = SureFire

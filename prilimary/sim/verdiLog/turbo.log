@@ -1,0 +1,6 @@
+Command Line: /usr/cad/synopsys/verdi/cur/platform/LINUXAMD64/bin/Novas
+uname(Linux icsdws19.ee.yuntech.edu.tw 4.18.0-193.19.1.el8_2.x86_64 #1 SMP Mon Sep 14 14:37:00 UTC 2020 x86_64)
+can not read file (EOF)
+can not read file (EOF)
+Read sm file (/home/SIP/M10912039/github/CIC_2018_grad/sim/BSSLib.lib++/libfile) error!!
+au time 7382.180457 59.115475 58.719679 delta 283729920 283729920 total 738807808 738807808

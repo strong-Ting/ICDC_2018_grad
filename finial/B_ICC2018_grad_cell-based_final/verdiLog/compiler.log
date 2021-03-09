@@ -1,10 +1,10 @@
 *design* DebussyLib (btIdent Verdi_Q-2020.03)
 Command arguments:
     +define+verilog
-    /home/lin/github/CIC_2018_grad/src/huffman.v
-    /home/lin/github/CIC_2018_grad/sim/tb.v
+    testfixture.v
+    RFILE.v
 
 Highest level modules:
-tb
+test
 
 Total	0 error(s),   0 warning(s)
