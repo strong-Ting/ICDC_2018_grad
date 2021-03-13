@@ -1,7 +1,7 @@
 `timescale 1ns/10ps
 `include            "./table.v"
 `define SDFFILE     "./RFILE_syn.sdf"     //Modify your sdf file name
-`define CYCLE       10                    //Modify your CYCLE
+`define CYCLE       25                    //Modify your CYCLE
 `define DEL         1.0
 `define PAT_NUM     100
 
