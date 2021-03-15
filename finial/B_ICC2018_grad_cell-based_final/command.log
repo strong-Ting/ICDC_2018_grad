@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version P-2019.03 for linux64 -- Feb 27, 2019
-#@ # Date:   Sat Mar 13 23:50:55 2021
+#@ # Date:   Mon Mar 15 17:34:59 2021
 #@ # Run by: M10912039@dics03.ee.yuntech.edu.tw
 #@ 
 
@@ -6711,7 +6711,7 @@ source -echo -verbose /home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_gr
 #@ # operating conditions and boundary conditions #
 #@ 
 #@ 
-#@ create_clock -name clk  -period 20.0   [get_ports  clk]      ;#Modify period by yourself
+#@ create_clock -name clk  -period 10.0   [get_ports  clk]      ;#Modify period by yourself
 #@ set_input_delay  -max 1.0   -clock clk [get_ports  value*]   ;#Modify value  by yourself
 #@ set_input_delay  -min 0.0   -clock clk [get_ports  value*]   ;#Modify value  by yourself
 #@ set_output_delay -max 1.0   -clock clk [get_ports  exp*]     ;#Modify value  by yourself
@@ -6742,6 +6742,13 @@ source -echo -verbose /home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_gr
 #@ 
 #@ # -- End source RFILE_DC.sdc
 
+#@ 
+#@ set_multicycle_path -setup 2 -to [get_cells xt*]
+#@ set_multicycle_path -hold  1 -to [get_cells xt*]
+#@ 
+#@ set_multicycle_path -setup 2 -to [get_cells yt*]
+#@ set_multicycle_path -hold  1 -to [get_cells yt*]
+#@ 
 #@ 
 #@ # Synthesis all design
 #@ compile -map_effort high -area_effort high

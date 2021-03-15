@@ -2,17 +2,141 @@ debImport "testfixture.v" "RFILE.v"
 debLoadSimResult \
            /home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/RFILE.fsdb
 wvCreateWindow
-wvRestoreSignal -win $_nWave2 \
-           "/home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/signal.rc" \
-           -overWriteAutoAlias on
-wvScrollUp -win $_nWave2 16
-wvScrollUp -win $_nWave2 5
 verdiDockWidgetMaximize -dock windowDock_nWave_2
-wvScrollUp -win $_nWave2 24
-wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
-wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
-wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
-wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalOpen -win $_nWave2
+wvGetSignalSetScope -win $_nWave2 "/test"
+wvGetSignalSetScope -win $_nWave2 "/test/u_TABLEC"
+wvGetSignalSetScope -win $_nWave2 "/test"
+wvGetSignalSetScope -win $_nWave2 "/test/u_RFILE"
+wvGetSignalSetSignalFilter -win $_nWave2 "clk*"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvGetSignalSetSignalFilter -win $_nWave2 "*"
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+{/test/u_RFILE/rst} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+{/test/u_RFILE/rst} \
+{/test/u_RFILE/rssiA\[19:0\]} \
+{/test/u_RFILE/rssiB\[19:0\]} \
+{/test/u_RFILE/rssiC\[19:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 3 4 5 )} 
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+{/test/u_RFILE/rst} \
+{/test/u_RFILE/rssiA\[19:0\]} \
+{/test/u_RFILE/rssiB\[19:0\]} \
+{/test/u_RFILE/rssiC\[19:0\]} \
+{/test/u_RFILE/xt\[7:0\]} \
+{/test/u_RFILE/yt\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 6 7 )} 
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+{/test/u_RFILE/rst} \
+{/test/u_RFILE/rssiA\[19:0\]} \
+{/test/u_RFILE/rssiB\[19:0\]} \
+{/test/u_RFILE/rssiC\[19:0\]} \
+{/test/u_RFILE/xt\[7:0\]} \
+{/test/u_RFILE/yt\[7:0\]} \
+{/test/u_RFILE/out_valid} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 8 )} 
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+{/test/u_RFILE/rst} \
+{/test/u_RFILE/rssiA\[19:0\]} \
+{/test/u_RFILE/rssiB\[19:0\]} \
+{/test/u_RFILE/rssiC\[19:0\]} \
+{/test/u_RFILE/xt\[7:0\]} \
+{/test/u_RFILE/yt\[7:0\]} \
+{/test/u_RFILE/out_valid} \
+{/test/u_RFILE/ns_p\[3:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 9 )} 
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/test/u_RFILE/clk} \
+{/test/u_RFILE/rst} \
+{/test/u_RFILE/rssiA\[19:0\]} \
+{/test/u_RFILE/rssiB\[19:0\]} \
+{/test/u_RFILE/rssiC\[19:0\]} \
+{/test/u_RFILE/xt\[7:0\]} \
+{/test/u_RFILE/yt\[7:0\]} \
+{/test/u_RFILE/out_valid} \
+{/test/u_RFILE/ns_p\[3:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 9 )} 
+wvSetPosition -win $_nWave2 {("G1" 9)}
 wvGetSignalClose -win $_nWave2
-wvReloadFile -win $_nWave2
-debExit
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2

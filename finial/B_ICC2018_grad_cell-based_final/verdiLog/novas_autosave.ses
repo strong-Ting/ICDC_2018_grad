@@ -18,8 +18,8 @@ AnnotationShow = 0
 powerDumped = 0
 [hb]
 postSimFile = /home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/RFILE.fsdb
-syncTime = 11000
-viewport = 1536 45 1344 777 0 0 267 1342
+syncTime = 0
+viewport = 497 439 1344 777 0 0 267 1342
 activeNode = "test"
 activeScope = "test"
 activeFile = "testfixture.v"
@@ -59,7 +59,7 @@ FsdbFile = /home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_grad_cell-bas
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 27 1344 672 199 186
+viewPort = 0 27 1344 293 199 186
 primaryWindow = TRUE
 SessionFile = /home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE

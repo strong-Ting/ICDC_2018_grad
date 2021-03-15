@@ -224,8 +224,8 @@ nWaveOpenFsdbDirHistory = "\"/home/SIP/M10912039/github/CIC_2018_grad/finial/B_I
 nWaveRestoreRCDirHistory = "\"/home/DICS/M10912039/CIC/CIC_2018_grad/finial/B_ICC2018_grad_cell-based_final/signal.rc\""
 [Form]
 version = Verdi_O-2018.09
-wave/unknownSave.fm = 100,100,520,275
 openfile.fm = 100,100,723,532
+wave/unknownSave.fm = 100,100,520,275
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
@@ -386,10 +386,10 @@ savePropDtl = TRUE
 openFileDlg = 1907,192,602,483
 VirtualFileEditorDialog = 1889,232,637,403
 saveSigDlg = 492,230,551,386
-schExtrFSM = 2072,389,287,105
-qWaveSignalDialog = 1816,202,800,479
 restoreSigDlg = 1932,214,551,438
+schExtrFSM = 2064,381,287,105
 QwWarnMsgDlg = 1898,257,600,250
+qWaveSignalDialog = 1808,194,800,479
 QwUserAskDlg = 1844,314,324,134
 [Relationship]
 hideRecursiceNode = FALSE
@@ -668,34 +668,34 @@ DefaultLogTimeUnit = "1.000000ns"
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = Severity
-width = 60
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = Time
 width = 60
 visualIndex = 0
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = Code
 width = 60
 visualIndex = 2
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = Type
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = Message
 width = 2000
 visualIndex = 4
 isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = Severity
+width = 60
+visualIndex = 1
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [Vi]
 ViFont = "Clean 14"
@@ -727,8 +727,8 @@ displayHorizontalRuler = FALSE
 displayVerticalGrid = FALSE
 displayHorizontalGrid = FALSE
 waveClickMemberNode = FALSE
-getSignalForm = 1816 202 800 479 164 381 390 89
-viewPort = 0 27 1344 672 199 186
+getSignalForm = 1808 194 800 479 164 381 390 89
+viewPort = 0 27 1344 647 199 186
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -1278,7 +1278,7 @@ schFillCmtColor = ID_YELLOW4 fill_solid
 pre_select = True
 ShowPassThroughNet = False
 ComputedAnnotColor = ID_PURPLE5
-viewport = 0 27 896 294
+viewport = 0 27 1344 647
 [schematics_print]
 Signature = FALSE
 DesignName = PCU
@@ -1354,7 +1354,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 27 1344 672 199 186
+viewPort = 0 27 1344 647 199 186
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

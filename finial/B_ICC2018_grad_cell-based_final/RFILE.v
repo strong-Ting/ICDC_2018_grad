@@ -41,6 +41,9 @@ reg [11:0] expA;
 reg [11:0] expB;
 reg [11:0] expC;
 
+//wire [7:0] xt = delt_x / delt;
+//wire [7:0] yt = delt_y / delt;
+
 parameter IDLE = 2'd0;
 parameter RECV = 2'd3;
 parameter PROCESS = 2'd1;
@@ -86,7 +89,7 @@ always@(*) begin
 end
 
 always@(*) begin
-    if(cs == PROCESS) begin
+    if(cs == PROCESS || cs == RECV) begin
         case(cs_p)
         P_IDLE: ns_p = P_RSSI_2S;
         P_RSSI_2S: ns_p = P_DISTANCE_0;
@@ -253,8 +256,12 @@ always@(posedge clk or posedge rst) begin
         delt_y <= X_0*C_1 - X_1*C_0;
     end
     else if(cs_p == P_COMPUTE_4) begin
-        xt <= delt_x / delt;
-        yt <= delt_y / delt;
+        //xt <= delt_x / delt;
+        //yt <= delt_y / delt;
+    end
+    else if(cs_p == P_DONE) begin
+         xt <= delt_x / delt;
+         yt <= delt_y / delt;
     end
 end
 

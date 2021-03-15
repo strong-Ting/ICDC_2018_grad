@@ -1,7 +1,7 @@
 # operating conditions and boundary conditions #
 
 
-create_clock -name clk  -period 20.0   [get_ports  clk]      ;#Modify period by yourself
+create_clock -name clk  -period 10.0   [get_ports  clk]      ;#Modify period by yourself
 set_input_delay  -max 1.0   -clock clk [get_ports  value*]   ;#Modify value  by yourself
 set_input_delay  -min 0.0   -clock clk [get_ports  value*]   ;#Modify value  by yourself
 set_output_delay -max 1.0   -clock clk [get_ports  exp*]     ;#Modify value  by yourself

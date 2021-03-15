@@ -7,6 +7,13 @@ link
 # Setting Clock Constraits
 source -echo -verbose RFILE_DC.sdc
 
+set_multicycle_path -setup 2 -to [get_cells xt*]
+set_multicycle_path -hold  1 -to [get_cells xt*]
+
+set_multicycle_path -setup 2 -to [get_cells yt*]
+set_multicycle_path -hold  1 -to [get_cells yt*]
+
+
 # Synthesis all design
 compile -map_effort high -area_effort high
 compile -map_effort high -area_effort high -inc
