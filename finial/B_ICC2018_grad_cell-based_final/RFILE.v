@@ -41,9 +41,6 @@ reg [11:0] expA;
 reg [11:0] expB;
 reg [11:0] expC;
 
-//wire [7:0] xt = delt_x / delt;
-//wire [7:0] yt = delt_y / delt;
-
 parameter IDLE = 2'd0;
 parameter RECV = 2'd3;
 parameter PROCESS = 2'd1;
