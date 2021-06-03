@@ -1,8 +1,0 @@
-//
-// File created by:  ncverilog
-// Do not modify this file
-//
-tb.v
-../src/huffman.v
-+define+tb1
-+access+r
