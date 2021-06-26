@@ -29,3 +29,5 @@ novas*
 BSSLib.lib++
 BSSLib.lib++/
 *.zip
+sim/
+doc/
